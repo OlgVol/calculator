@@ -63,7 +63,7 @@ document.querySelector(".buttons").onclick = (event) => {
         break;
       case "/":
         if (y === "0") {
-          out.textContent = "eror";
+          out.textContent = "error";
           x = "";
           y = "";
           operation = "";
