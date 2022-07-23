@@ -38,14 +38,14 @@ document.querySelector(".buttons").onclick = (event) => {
       y += key;
       out.textContent = y;
     }
-    console.log(x, y, operation);
+    //console.log(x, y, operation);
     return;
   }
 
   if (actions.includes(key)) {
     operation = key;
     out.textContent = operation;
-    console.log(x, y, operation);
+    //console.log(x, y, operation);
     return;
   }
 
@@ -74,9 +74,12 @@ document.querySelector(".buttons").onclick = (event) => {
       case "%":
         x = x / 100;
         break;
+      case "+/-":
+        x = x > 0 ? x * -1 : x;
+        break;
     }
     finish = true;
     out.textContent = x;
-    console.log(x, y, operation);
+    //console.log(x, y, operation);
   }
 };
