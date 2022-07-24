@@ -1,2 +1,2 @@
 # calculator
-https://olgvol.github.io/calculator/
+https://OlgVol.github.io/calculator/
