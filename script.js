@@ -37,14 +37,14 @@ document.querySelector(".buttons").onclick = (event) => {
     } else if (x !== "" && y !== "" && finish) {
       y = key;
       finish = false;
-      out.textContent = y;
+      out.textContent = parseFloat(y, [0]);
     } else {
       if (key === "." && y.includes(".")) {
         y += "";
-        out.textContent = y;
+        out.textContent = parseFloat(y, [0]);
       } else {
         y += key;
-        out.textContent = y;
+        out.textContent = parseFloat(y, [0]);
       }
     }
     return;
