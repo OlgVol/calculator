@@ -27,18 +27,26 @@ document.querySelector(".buttons").onclick = (event) => {
 
   if (digits.includes(key)) {
     if (y === "" && operation === "") {
-      x += key;
-      console.log(x, y, operation);
-      out.textContent = x;
+      if (key === "." && x.includes(".")) {
+        x += "";
+        out.textContent = parseFloat(x, [0]);
+      } else {
+        x += key;
+        out.textContent = parseFloat(x, [0]);
+      }
     } else if (x !== "" && y !== "" && finish) {
       y = key;
       finish = false;
       out.textContent = y;
     } else {
-      y += key;
-      out.textContent = y;
+      if (key === "." && y.includes(".")) {
+        y += "";
+        out.textContent = y;
+      } else {
+        y += key;
+        out.textContent = y;
+      }
     }
-    console.log(x, y, operation);
     return;
   }
 
@@ -53,7 +61,7 @@ document.querySelector(".buttons").onclick = (event) => {
     if (y === "") y = x;
     switch (operation) {
       case "+":
-        x = +x + +y;
+        x = (+x) + (+y);
         break;
       case "-":
         x = x - y;
